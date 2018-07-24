@@ -1,0 +1,19 @@
+{{ if or .HasPrev .HasNext }}
+<p class="pagination">
+  {{ if .HasPrev }}
+      <a href="{{ .First.URL }}">« {{ .First.PageNumber }}</a> ·
+    {{ if ne .Prev.PageNumber .First.PageNumber }}
+      <a href="{{ .Prev.URL }}">‹ {{ .Prev.PageNumber }}</a> ·
+    {{ end }}
+  {{ end }}
+
+      {{ .PageNumber }}
+
+  {{ if .HasNext }}
+    {{ if ne .Next.PageNumber .Last.PageNumber }}
+      · <a href="{{ .Next.URL }}">{{ .Next.PageNumber }} ›</a>
+    {{ end }}
+      · <a href="{{ .Last.URL }}">{{ .Last.PageNumber }} »</a>
+  {{ end }}
+</p>
+{{ end }}

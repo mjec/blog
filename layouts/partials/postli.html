@@ -1,0 +1,12 @@
+ <li>
+   <h2><a href="{{ .Permalink }}">{{ .Title }}</a>
+     <small>
+      <span class="together">{{ .Date.Format (.Site.Params.dateform | default "January 2006") }}</span>
+    {{ if .Params.tags }}
+      {{ $category := delimit (first 1 .Params.tags) "" "" }}
+      in <a href="/tags/{{ $category|urlize }}/">{{ $category }}</a>
+    {{ end }}
+    </small>
+   </h2>
+   <p class="preview">{{ .Description | default .Summary }}</p>
+ </li>

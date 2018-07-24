@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+
+<section id=content>
+  <h1>{{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}</h1>
+
+  <div class="entry-content">
+    {{ .Content }}
+  </div>
+
+</section>
+
+{{ partial "footer.html" . }}
+
+

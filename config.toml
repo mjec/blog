@@ -1,0 +1,30 @@
+baseURL = "https://mjec.blog/"
+languageCode = "en-us"
+title = "mjec's electric blogaloo"
+author = "Michael Cordover"
+theme = "black-and-light"
+enableRobotsTXT = true
+
+pygmentsStyle = "monokailight"
+pygmentsCodefences = true
+
+pygmentsOptions = "linenos=table"
+
+[params]
+  sitename = "mjec's electric blogaloo"
+  dateform = "2 January 2006"
+
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
+
+[taxonomies]
+  tag = "tags"
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+
+[[menu.main]]
+  name = "Browse by tag"
+  url = "/tags/"
+

@@ -1,0 +1,36 @@
+{{ partial "header.html" . }}
+
+<section id=content>
+  <h1>{{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}</h1>
+
+  <div id=sub-header>
+    {{ .Date.Format (.Site.Params.dateform | default "January 2006") }} · {{ .ReadingTime }} minute read
+    {{ if .Params.tags }}
+    · <span class="tags">
+        {{ range .Params.tags }}
+            {{ $url := urlize . }}
+            {{ $link := printf "<a href='/tags/%s/'>%s</a>" $url . }}
+            {{ $.Scratch.Add "taglist" (slice $link) }}
+        {{ end }}
+        {{ $taglist := $.Scratch.Get "taglist" }}
+        {{ delimit $taglist ", " " and " }}</span>
+    {{ end }}
+  </div>
+
+  <div class="entry-content">
+    {{ .Content }}
+  </div>
+
+  <div id=links>
+    {{ if .PrevInSection }}
+      <a class="basic-alignment left" href="{{.PrevInSection.Permalink}}">&laquo; {{.PrevInSection.Title}}</a>
+    {{ end }}
+    {{ if .NextInSection }}
+      <a class="basic-alignment left" href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}} &raquo;</a>
+    {{ end }}
+  </div>
+</section>
+
+{{ partial "footer.html" . }}
+
+
