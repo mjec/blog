@@ -4,11 +4,13 @@ pushd "$(dirname "$0")"
 hugo
 
 cd public
-git commit -am "${1:-Update content}"
+git add .
+git commit -m "${1:-Update content}"
 git push
 
 cd ..
-git commit -am "${1:-Update content}"
+git add .
+git commit -m "${1:-Update content}"
 git push
 
 popd
