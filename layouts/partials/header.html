@@ -25,9 +25,9 @@
     {{ partial "styles.html" . }}
 
 
-    {{ if  (.OutputFormats.Get "RSS") .RelPermalink }}
-    <link href="{{ (.OutputFormats.Get "RSS") .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
+    {{ range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+    {{ end -}}
   </head>
 
   <body>
