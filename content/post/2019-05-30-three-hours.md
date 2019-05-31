@@ -6,8 +6,8 @@ date = "2019-05-30"
 +++
 
 Earlier this year I was promoted to be a staff software engineer. This 
-involves being not just problem solving, but also a (partial) responsibility
-for the culture of my workplace.
+involves not just problem solving, but also a (partial) responsibility for the
+culture of my workplace.
 
 One of the things I struggled with for a long time -- long before I was working
 as a full-time programmer -- was a lack of understanding of how senior people
